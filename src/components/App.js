@@ -8,7 +8,28 @@ const App = () => {
     <div className="app-container">
       <Toaster position="bottom-center" reverseOrder={false} />
       <SideNavbar />
-      <div className="main-content"></div>
+      <div className="main-content">
+        <div className="editor-section section">
+          1
+          {/* <Suspense
+                fallback={<div className="suspense-loader">{loader()}</div>}
+              >
+                <Editor
+                  setQuery={setQuery}
+                  query={query}
+                  executeQuery={executeQuery}
+                />
+              </Suspense> */}
+        </div>
+        <div className="result-section section">
+          {/* <ResultSection
+                tableName={tableName}
+                result={result}
+                resultIsLoading={resultIsLoading}
+              /> */}
+          2
+        </div>
+      </div>
     </div>
   );
 };
