@@ -12,17 +12,15 @@
   flex: 1;
   height: 100%;
   width: 100%;
-  background-color: red;
   display: flex;
   flex-direction: column;
 
   .editor-section {
     height: 60%;
-    background-color: red;
   }
 
   .result-section {
     height: 40%;
-    background-color: white;
+    background-color: red;
   }
 }
