@@ -7,6 +7,7 @@ const Editor = ({ setQuery, query, executeQuery }) => {
   const [content, setContent] = useState(query);
   return (
     <div className="editor">
+      <h2 className="heading">SQL Compiler</h2>
       <CodeMirror
         value={content}
         extensions={[sql()]}
@@ -16,14 +17,6 @@ const Editor = ({ setQuery, query, executeQuery }) => {
       />
       <div className="buttons">
         <button
-          className="clear button"
-          onClick={() => {
-            setQuery("");
-          }}
-        >
-          Clear
-        </button>
-        <button
           className="run button"
           onClick={() => {
             setQuery(content);
@@ -31,6 +24,15 @@ const Editor = ({ setQuery, query, executeQuery }) => {
           }}
         >
           Run
+        </button>
+        <button
+          className="clear button"
+          onClick={() => {
+            setContent("");
+            setQuery("");
+          }}
+        >
+          Reset
         </button>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { fetchData } from "../helpers/helpers";
 import "./App.scss";
 import toast, { Toaster } from "react-hot-toast";
 import { Oval } from "react-loader-spinner";
+import ResultSection from "./ResultSection";
 
 const Editor = lazy(() => import("../components/Editor"));
 
@@ -85,8 +86,11 @@ const App = () => {
           </Suspense>
         </div>
         <div className="result-section section">
-          {/* <ResultSection tableName={tableName} result={result} resultIsLoading={resultIsLoading} /> */}
-          2
+          <ResultSection
+            tableName={tableName}
+            result={result}
+            resultIsLoading={resultIsLoading}
+          />
         </div>
       </div>
     </div>

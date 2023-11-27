@@ -1,6 +1,7 @@
 .app-container {
   display: flex;
   height: 100vh;
+  background-color: black;
 }
 
 .side-navbar {
@@ -16,11 +17,10 @@
   flex-direction: column;
 
   .editor-section {
-    height: 60%;
+    height: 50%;
   }
 
   .result-section {
-    height: 40%;
-    background-color: red;
+    height: 50%;
   }
 }

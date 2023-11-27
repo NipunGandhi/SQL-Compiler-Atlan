@@ -11,12 +11,10 @@ const convertToJSON = async (decodedData) => {
       "SELECT * FROM CSV(?, {headers: false, separator:','})",
       [decodedData]
     );
-    toast.success("Query executed successfully");
+    toast.success("Compiled Successfully");
     return { data: data, status: "success" };
   } catch (e) {
-    toast.success(
-      "Oh No! We can't understand your query. Would you mind checking it."
-    );
+    toast.success("Try some other query");
     return { data: "", status: "error" };
   }
 };
@@ -82,7 +80,7 @@ const fetchData = (
       });
     }
   } else {
-    toast.error("Sorry! We don't have any table by that name");
+    toast.error("Sorry! We don't have any table by that name in database");
     setResultIsLoading(false);
   }
 };
