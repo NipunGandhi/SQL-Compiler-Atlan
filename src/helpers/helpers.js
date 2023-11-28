@@ -19,13 +19,7 @@ const convertToJSON = async (decodedData) => {
   }
 };
 
-const fetchData = (
-  tableName,
-  setResult,
-  setResultIsLoading,
-  setHistory,
-  query
-) => {
+const fetchData = (tableName, setResult, setResultIsLoading, query) => {
   if (TABLE_NAMES.includes(tableName)) {
     const storedData = localStorage.getItem("northwind-data-csv");
     const object = JSON.parse(storedData);
@@ -62,7 +56,6 @@ const fetchData = (
           convertToJSON(atob(incodedData)).then(({ data, status }) => {
             setResult(data);
             setResultIsLoading(false);
-            setHistory((prev) => [{ query: query, status: status }, ...prev]);
           });
         })
         .catch((err) => {
@@ -76,7 +69,6 @@ const fetchData = (
       convertToJSON(atob(object[tableName])).then(({ data, status }) => {
         setResult(data);
         setResultIsLoading(false);
-        setHistory((prev) => [{ query: query, status: status }, ...prev]);
       });
     }
   } else {

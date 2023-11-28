@@ -1,5 +1,5 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
-import SideNavbar from "../components/SideNavbar";
+import SideSection from "../components/SideNavbar";
 import { fetchData } from "../helpers/helpers";
 import "./App.scss";
 import toast, { Toaster } from "react-hot-toast";
@@ -24,7 +24,6 @@ const App = () => {
   const [query, setQuery] = useState("SELECT * FROM Customers");
   const [result, setResult] = useState("");
   const [resultIsLoading, setResultIsLoading] = useState(false);
-  const [history, setHistory] = useState([]);
 
   const getTableName = (items) => {
     const idx = items.indexOf("FROM");
@@ -46,13 +45,7 @@ const App = () => {
       const items = query.split(" ");
       if (items[0].toLowerCase() === "select") {
         const table = getTableName(items);
-        fetchData(
-          table.toLowerCase(),
-          setResult,
-          setResultIsLoading,
-          setHistory,
-          query
-        );
+        fetchData(table.toLowerCase(), setResult, setResultIsLoading, query);
       } else {
         toast.error("Sorry! SELECT queries are only supported for now.");
         setResultIsLoading(false);
@@ -72,7 +65,7 @@ const App = () => {
   return (
     <div className="app-container">
       <Toaster position="bottom-center" reverseOrder={false} />
-      <SideNavbar />
+      <SideSection />
       <div className="main-content">
         <div className="editor-section section">
           <Suspense
