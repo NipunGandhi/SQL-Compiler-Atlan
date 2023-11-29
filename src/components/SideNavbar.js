@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import "./SideNavbar.scss";
 import { links } from "../helpers/linksData";
-import About from "../pages/About";
+import About from "../pages/About/About.js";
 import Guide from "../pages/Guide";
 import Intro from "../pages/Intro";
 import TechStack from "../pages/TechStack";
