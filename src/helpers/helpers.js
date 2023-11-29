@@ -1,9 +1,9 @@
-import TABLE_NAMES from "../constants/constants";
 import alasql from "alasql";
 import toast from "react-hot-toast";
+import fetchDataAndStoreAsCSV from "../helpers/getTables";
 
 const getURL = (tableName) =>
-  `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${tableName}.csv`;
+  `https://api.github.com/repos/graphql-compose/graphql-compose-exampless/contents/examples/northwind/data/csv/${tableName}.csv`;
 
 const convertToJSON = async (decodedData) => {
   try {
@@ -19,11 +19,12 @@ const convertToJSON = async (decodedData) => {
   }
 };
 
-const fetchData = (tableName, setResult, setResultIsLoading, query) => {
-  if (TABLE_NAMES.includes(tableName)) {
+const fetchData = async (tableName, setResult, setResultIsLoading, query) => {
+  const fetchedData = await fetchDataAndStoreAsCSV();
+  const foundItem = fetchedData.find((item) => item.name === tableName);
+  if (foundItem) {
     const storedData = localStorage.getItem("northwind-data-csv");
     const object = JSON.parse(storedData);
-
     if (object === null || object[tableName] === undefined) {
       fetch(getURL(tableName), {
         headers: {
