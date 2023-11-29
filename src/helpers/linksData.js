@@ -1,17 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChalkboardUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChalkboardUser,
+  faAddressCard,
+  faG,
+  faLayerGroup,
+  faCode,
+} from "@fortawesome/free-solid-svg-icons";
 
-const getIcon = () => (
-  <FontAwesomeIcon
-    icon={faChalkboardUser}
-    style={{ fontSize: "24px", color: "orange" }}
-  />
-);
+const style = { fontSize: "24px", color: "orange" };
 
 export const links = [
-  { icon: getIcon(), path: "/" },
-  { icon: getIcon(), path: "/aboutMe" },
-  { icon: getIcon(), path: "/guide" },
-  { icon: getIcon(), path: "/techStack" },
-  { icon: getIcon(), path: "/extra" },
+  {
+    icon: <FontAwesomeIcon icon={faChalkboardUser} style={style} />,
+    path: "/",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faAddressCard} style={style} />,
+    path: "/aboutMe",
+  },
+  { icon: <FontAwesomeIcon icon={faG} style={style} />, path: "/guide" },
+  {
+    icon: <FontAwesomeIcon icon={faCode} style={style} />,
+    path: "/techStack",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faLayerGroup} style={style} />,
+    path: "/extra",
+  },
 ];

@@ -22,13 +22,15 @@ const SideSection = () => {
           ))}
         </ul>
         <div className="page-content">
-          <Routes>
-            <Route path="/" element={<Intro />} />
-            <Route path="/aboutMe" element={<About />} />
-            <Route path="/guide" element={<Guide />} />
-            <Route path="/techStack" element={<TechStack />} />
-            <Route path="/extra" element={<Extra />} />
-          </Routes>
+          <div className="scroll">
+            <Routes>
+              <Route path="/" element={<Intro />} />
+              <Route path="/aboutMe" element={<About />} />
+              <Route path="/guide" element={<Guide />} />
+              <Route path="/techStack" element={<TechStack />} />
+              <Route path="/extra" element={<Extra />} />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter>
     </div>
