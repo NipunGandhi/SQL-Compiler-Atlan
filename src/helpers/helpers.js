@@ -6,11 +6,11 @@ const getURL = (tableName) =>
   `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${tableName}.csv`;
 
 const fetchData = async (tableName, setResult, setResultIsLoading, query) => {
-  // const fetchedData = await fetchDataAndStoreAsCSV();
-  // const foundItem = fetchedData.find(
-  //   (item) => item.name.toLowerCase === tableName.toLowerCase
-  // );
-  if (true) {
+  const fetchedData = await fetchDataAndStoreAsCSV();
+  const foundItem = fetchedData.find(
+    (item) => item.name.toLowerCase === tableName.toLowerCase
+  );
+  if (foundItem) {
     const storedData = localStorage.getItem("northwind-data-csv");
     const object = JSON.parse(storedData);
     if (object === null || object[tableName] === undefined) {

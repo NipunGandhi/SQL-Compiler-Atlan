@@ -1,5 +1,4 @@
-import React from "react";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import React, { useState } from "react";
 import "./SideNavbar.scss";
 import { links } from "../helpers/linksData";
 import About from "../pages/About/About.js";
@@ -9,30 +8,48 @@ import TechStack from "../pages/TechStack";
 import Extra from "../pages/Extra";
 
 const SideSection = () => {
+  const [currentScreen, setCurrentScreen] = useState(<Intro />);
+
+  const handleLinkClick = (screen) => {
+    setCurrentScreen(screen);
+  };
+
   return (
     <div className="side-navbar">
-      <BrowserRouter>
-        <ul className="link-items">
-          {links.map(({ icon, path }, index) => (
-            <li key={index} className="link-item">
-              <Link to={path} className="link">
-                {icon}
-              </Link>
+      <ul className="link-items">
+        {links.map(({ icon, path }, index) => {
+          let screen;
+          switch (path) {
+            case "/":
+              screen = <Intro />;
+              break;
+            case "/aboutMe":
+              screen = <About />;
+              break;
+            case "/guide":
+              screen = <Guide />;
+              break;
+            case "/techStack":
+              screen = <TechStack />;
+              break;
+            case "/extra":
+              screen = <Extra />;
+              break;
+            default:
+              screen = <Intro />;
+          }
+          return (
+            <li
+              key={index}
+              className="link-item"
+              onClick={() => handleLinkClick(screen)}
+            >
+              {icon}
             </li>
-          ))}
-        </ul>
-        <div className="page-content">
-          <div className="scroll">
-            <Routes>
-              <Route path="/" element={<Intro />} />
-              <Route path="/aboutMe" element={<About />} />
-              <Route path="/guide" element={<Guide />} />
-              <Route path="/techStack" element={<TechStack />} />
-              <Route path="/extra" element={<Extra />} />
-            </Routes>
-          </div>
-        </div>
-      </BrowserRouter>
+          );
+        })}
+      </ul>
+      <div className="page-content">{currentScreen}</div>
     </div>
   );
 };
