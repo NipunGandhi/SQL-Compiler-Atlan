@@ -1,0 +1,22 @@
+.about-container {
+  color: white;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .intro {
+    background-color: #e6e6e6;
+    color: black;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .intro li {
+    list-style-type: disc;
+  }
+}

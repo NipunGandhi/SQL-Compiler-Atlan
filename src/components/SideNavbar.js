@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./SideNavbar.scss";
 import { links } from "../helpers/linksData";
 import About from "../pages/About/About.js";
-import Guide from "../pages/Guide";
-import Intro from "../pages/Intro";
+import Intro from "../pages/Intro/Intro.js";
 import TechStack from "../pages/TechStack/TechStack.js";
 import Extra from "../pages/Extra/Extra.js";
 
@@ -25,9 +24,6 @@ const SideSection = () => {
               break;
             case "/aboutMe":
               screen = <About />;
-              break;
-            case "/guide":
-              screen = <Guide />;
               break;
             case "/techStack":
               screen = <TechStack />;

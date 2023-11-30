@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChalkboardUser,
   faAddressCard,
-  faG,
   faLayerGroup,
   faCode,
 } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +17,6 @@ export const links = [
     icon: <FontAwesomeIcon icon={faAddressCard} style={style} />,
     path: "/aboutMe",
   },
-  { icon: <FontAwesomeIcon icon={faG} style={style} />, path: "/guide" },
   {
     icon: <FontAwesomeIcon icon={faCode} style={style} />,
     path: "/techStack",
