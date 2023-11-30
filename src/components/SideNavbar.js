@@ -4,8 +4,8 @@ import { links } from "../helpers/linksData";
 import About from "../pages/About/About.js";
 import Guide from "../pages/Guide";
 import Intro from "../pages/Intro";
-import TechStack from "../pages/TechStack";
-import Extra from "../pages/Extra";
+import TechStack from "../pages/TechStack/TechStack.js";
+import Extra from "../pages/Extra/Extra.js";
 
 const SideSection = () => {
   const [currentScreen, setCurrentScreen] = useState(<Intro />);
