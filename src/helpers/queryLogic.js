@@ -63,13 +63,11 @@ const convertToJSON = async (decodedData, query) => {
       }
       return newRow;
     });
-
+    toast.success("Compiled Successfully");
     return {
       data: [querybreakdown.select, ...selectedColumns],
       status: "success",
     };
-
-    toast.success("Compiled Successfully");
   } catch (e) {
     toast.success("Try some other query");
     return { data: "", status: "error" };

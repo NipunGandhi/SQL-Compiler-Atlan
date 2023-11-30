@@ -26,7 +26,7 @@ const App = () => {
   const [resultIsLoading, setResultIsLoading] = useState(false);
 
   const getTableName = (items) => {
-    const idx = items.indexOf("FROM");
+    const idx = items.indexOf("from");
     if (idx !== -1) {
       const tableName = items[idx + 1].replace(";", "");
       setTableName(tableName);
@@ -42,10 +42,10 @@ const App = () => {
       setResultIsLoading(false);
     } else if (query.split(" ").length > 3) {
       setResultIsLoading(true);
-      const items = query.split(" ");
+      const items = query.toLowerCase().split(" ");
       if (items[0].toLowerCase() === "select") {
         const table = getTableName(items);
-        fetchData(table.toLowerCase(), setResult, setResultIsLoading, query);
+        fetchData(table, setResult, setResultIsLoading, query);
       } else {
         toast.error("Sorry! SELECT queries are only supported for now.");
         setResultIsLoading(false);
