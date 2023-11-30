@@ -19,7 +19,6 @@ async function fetchDataAndStoreAsCSV() {
       dataArray.push(currentItem);
     }
   }
-  console.log(dataArray);
 
   return dataArray;
 }

@@ -40,7 +40,7 @@ const App = () => {
         <div className="customToast">Please enter a query to execute</div>
       );
       setResultIsLoading(false);
-    } else if (query.split(" ").length > 3 && query.split(" ")[3].length > 0) {
+    } else if (query.split(" ").length > 3) {
       setResultIsLoading(true);
       const items = query.split(" ");
       if (items[0].toLowerCase() === "select") {
