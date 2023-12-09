@@ -7,6 +7,7 @@ const getURL = (tableName) =>
 
 const fetchData = async (tableName, setResult, setResultIsLoading, query) => {
   const fetchedData = await fetchDataAndStoreAsCSV();
+  console.log(fetchedData);
   const foundItem = fetchedData.find(
     (item) => item.name.toLowerCase === tableName.toLowerCase
   );

@@ -4,7 +4,7 @@ async function fetchDataAndStoreAsCSV() {
     {
       headers: {
         Accept: "application/vnd.github.v4+raw",
-        Authorization: "token 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",
+        Authorization: "token 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",
       },
     }
   );
